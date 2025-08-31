@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { authClient } from "@/lib/auth-client";
+import { Google } from "@lobehub/icons";
 
 interface OAuthButtonProps {
   provider: "google" | "github";
@@ -31,8 +32,9 @@ export const OAuthButton = ({
   const providerName = provider === "google" ? "Google" : "GitHub";
 
   return (
-    <Button onClick={handleClick} disabled={isPending}>
+    <Button onClick={handleClick} disabled={isPending} className="cursor-pointer active:scale-95 transition-all duration-300 hover:bg-white/10">
       Sign {action} with {providerName}
+      {provider === "google" && <Google className="w-4 h-4" />}
     </Button>
   );
 };

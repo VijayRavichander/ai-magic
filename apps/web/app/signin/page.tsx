@@ -32,7 +32,7 @@ export default function Signin() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center mt-10">
       <SignInForm onSubmit={handleSignin} />
     </div>
   );
